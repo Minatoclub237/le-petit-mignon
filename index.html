@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Petit Mignon &middot; Bordeaux</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<meta name="description" content="Petit Mignon, restaurant de burgers a Bordeaux : tartares, magret et burgers prepares minute avec des produits frais depuis plus de 10 ans. 33 Rue Saint-Remi, 33000 Bordeaux. Note 4,8/5 (846 avis Google)." />
+<meta name="theme-color" content="#f4a11f" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2714%27%20fill%3D%27%23f4a11f%27/%3E%3Ctext%20x%3D%2732%27%20y%3D%2747%27%20font-family%3D%27Georgia%2Cserif%27%20font-style%3D%27italic%27%20font-size%3D%2742%27%20text-anchor%3D%27middle%27%20fill%3D%27%23111%27%3Ep%3C/text%3E%3C/svg%3E" />
+<meta property="og:type" content="restaurant" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:title" content="Petit Mignon - Bordeaux" />
+<meta property="og:description" content="Burgers, tartares et magret - produits frais depuis plus de 10 ans, au coeur de Bordeaux." />
+<meta property="og:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&h=630&fit=crop&q=80&auto=format" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Petit Mignon - Bordeaux" />
+<meta name="twitter:description" content="Burgers, tartares et magret - produits frais au coeur de Bordeaux." />
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&h=630&fit=crop&q=80&auto=format" />
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+body { font-family: 'Barlow', sans-serif; background: #010101; color: #fff; }
+
+.liquid-glass {
+  background: rgba(255,255,255,0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass::before {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.45) 0%,
+    rgba(255,255,255,0.15) 20%,
+    rgba(255,255,255,0) 40%,
+    rgba(255,255,255,0) 60%,
+    rgba(255,255,255,0.15) 80%,
+    rgba(255,255,255,0.45) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.liquid-glass-strong {
+  background: rgba(255,255,255,0.03);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border: none;
+  box-shadow: 4px 4px 4px rgba(0,0,0,0.05), inset 0 1px 1px rgba(255,255,255,0.15);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass-strong::before {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.5) 0%,
+    rgba(255,255,255,0.2) 20%,
+    rgba(255,255,255,0) 40%,
+    rgba(255,255,255,0) 60%,
+    rgba(255,255,255,0.2) 80%,
+    rgba(255,255,255,0.5) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.fixed { position: fixed; }
+.absolute { position: absolute; }
+.relative { position: relative; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+
+/* Scroll Video */
+#scroll-video-container {
+  position: fixed; inset: 0; z-index: 0;
+  background: #0a0a0a; pointer-events: none;
+}
+#scroll-video-container canvas,
+#scroll-video-container video {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+}
+#scroll-video-container .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.2); }
+
+/* Particles */
+#particles-canvas {
+  position: fixed; inset: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 3;
+}
+
+/* Nav */
+nav {
+  position: fixed; top: 1rem; left: 0; right: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem;
+}
+nav .logo-mark {
+  width: 48px; height: 48px; border-radius: 9999px; display: grid; place-items: center;
+  color: #fff; font-family: 'Instrument Serif', serif; font-size: 2rem; font-style: italic;
+}
+nav .nav-links {
+  display: flex; align-items: center; gap: 0; border-radius: 9999px;
+  padding: 0.375rem; margin: 0 auto;
+}
+nav .nav-links a {
+  font-size: 0.875rem; color: rgba(255,255,255,0.9); text-decoration: none;
+  transition: color 0.2s, background 0.2s; font-weight: 500;
+  padding: 0.65rem 0.9rem; border-radius: 9999px; white-space: nowrap;
+}
+nav .nav-links a:hover { color: #fff; }
+nav .nav-links .nav-pill-btn {
+  display: inline-flex; align-items: center; gap: 0.45rem; background: #fff; color: #000;
+  font-weight: 600; margin-left: 0.25rem;
+}
+nav .nav-links .nav-pill-btn:hover { color: #000; background: #f4a11f; }
+nav .nav-cta {
+  width: 48px; height: 48px; opacity: 0; pointer-events: none;
+}
+nav .nav-toggle {
+  display: none; width: 48px; height: 48px; border-radius: 9999px; border: none;
+  cursor: pointer; background: transparent; padding: 0;
+  flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+}
+nav .nav-toggle span {
+  display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+nav .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav .nav-toggle.open span:nth-child(2) { opacity: 0; }
+nav .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Hero */
+#hero {
+  position: relative; height: 100vh; width: 100%; display: flex; flex-direction: column;
+}
+#hero .gradient-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent, transparent);
+}
+#hero .content {
+  position: relative; z-index: 10; flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: flex-end; text-align: center;
+  padding: 0 1.5rem 6rem;
+}
+#hero .subtitle { font-size: 0.95rem; color: rgba(255,255,255,0.82); margin-bottom: 1rem; letter-spacing: 0.05em; }
+#hero h1 {
+  font-family: 'Instrument Serif', serif; font-style: italic;
+  font-size: clamp(3.4rem, 8vw, 6.6rem); font-weight: 400; line-height: 0.85;
+  max-width: 58rem; letter-spacing: -0.04em;
+}
+#hero h1 .underlined {
+  position: relative; display: inline-block;
+}
+#hero h1 .underlined .line {
+  position: absolute; bottom: 0.25rem; left: 0; width: 100%; height: 10px;
+  background: #f4a11f; border-radius: 2px;
+}
+#hero h1 .underlined span { position: relative; }
+#hero .ctas {
+  display: flex; align-items: center; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; justify-content: center;
+}
+#hero .code-box {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: rgba(10,10,10,0.72); border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 0.5rem; padding: 0.875rem 2rem;
+}
+#hero .code-box .prompt { color: #f4a11f; font-family: monospace; font-size: 0.875rem; }
+#hero .code-box code { font-size: 0.875rem; color: #f7f1e8; font-family: monospace; }
+#hero .cta-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: #f4a11f; color: #111; font-weight: 700; border-radius: 0.5rem;
+  padding: 0.875rem 2rem; font-size: 0.875rem; text-decoration: none; transition: background 0.2s;
+}
+#hero .cta-btn:hover { background: #ffc04b; }
+#hero .bounce-arrow {
+  position: relative; z-index: 10; display: flex; justify-content: center; padding-bottom: 2rem;
+}
+#hero .bounce-arrow svg { width: 1.5rem; height: 1.5rem; color: #6b7280; animation: bounce 1s infinite; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-25%); }
+}
+
+/* Scroll Story Cards */
+.story-stage {
+  position: fixed; inset: 0; z-index: 12; pointer-events: none;
+}
+.story-scene {
+  position: absolute; inset: 0; display: flex; align-items: center;
+  opacity: 0; filter: blur(12px);
+  transition: opacity 620ms ease, transform 760ms cubic-bezier(0.22, 1, 0.36, 1), filter 620ms ease;
+}
+.story-scene.from-left { justify-content: flex-start; padding-left: 5vw; transform: translateX(-34vw); }
+.story-scene.from-right { justify-content: flex-end; padding-right: 6vw; transform: translateX(34vw); }
+.story-scene.from-bottom { justify-content: center; align-items: flex-end; padding-bottom: 8vh; transform: translateY(16vh); }
+.story-scene.active {
+  opacity: 1; transform: translate3d(0,0,0); filter: blur(0);
+}
+.story-card {
+  width: min(520px, 88vw); border-radius: 1.25rem; padding: 1.35rem;
+}
+.story-card.compact { width: min(390px, 84vw); }
+.story-kicker {
+  color: rgba(255,255,255,0.68); font-size: 0.72rem; text-transform: uppercase;
+  letter-spacing: 0.16em; margin-bottom: 0.75rem;
+}
+.story-card h3 {
+  font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400;
+  font-size: clamp(2.25rem, 4vw, 4.4rem); line-height: 0.9; letter-spacing: -0.04em; margin-bottom: 1rem;
+}
+.story-card p { color: rgba(255,255,255,0.84); font-size: 1rem; line-height: 1.45; }
+.story-card .arrow { position: absolute; right: 1rem; top: 1rem; color: #fff; font-size: 1.2rem; }
+.story-price { display: block; color: #f4a11f; font-weight: 700; margin-top: 1rem; font-size: 1.05rem; }
+.story-lines { display: grid; gap: 0.9rem; margin-top: 1rem; }
+.story-lines div {
+  display: flex; justify-content: space-between; gap: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.14); padding-top: 0.8rem;
+}
+.story-lines strong { color: #f4a11f; white-space: nowrap; }
+.story-scroll-space { min-height: 760vh; }
+
+/* Restaurant Info */
+.info-sections {
+  position: relative; z-index: 8; display: block; padding: 0;
+}
+.info-panel {
+  width: min(620px, 88vw); min-height: 360px; padding: 1.5rem;
+  border-radius: 1.25rem; opacity: 0; filter: blur(10px);
+  transition: opacity 900ms ease, transform 1000ms cubic-bezier(0.22, 1, 0.36, 1), filter 900ms ease;
+  display: flex; flex-direction: column;
+}
+.info-panel.from-left { justify-self: start; transform: translateX(-42vw); }
+.info-panel.from-right { justify-self: end; transform: translateX(42vw); }
+.info-panel.visible { opacity: 1; transform: translateX(0); filter: blur(0); }
+.info-panel .panel-top {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: auto;
+}
+.info-panel .panel-icon {
+  width: 44px; height: 44px; border-radius: 0.75rem; display: grid; place-items: center; flex: 0 0 auto;
+}
+.info-panel .panel-icon svg { width: 24px; height: 24px; color: #fff; }
+.info-panel .panel-tags { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.4rem; max-width: 70%; }
+.info-panel .panel-tags span {
+  border-radius: 9999px; padding: 0.35rem 0.7rem; color: rgba(255,255,255,0.9);
+  font-size: 0.72rem; white-space: nowrap;
+}
+.info-panel .panel-copy { margin-top: 4rem; }
+.info-panel .eyebrow {
+  color: #f4a11f; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; margin-bottom: 0.85rem;
+}
+.info-panel h2 {
+  font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400;
+  font-size: clamp(2.4rem, 4vw, 4rem); line-height: 0.95; margin-bottom: 1rem;
+  letter-spacing: -0.035em;
+}
+.info-panel p { color: #e9ded0; font-size: 1rem; line-height: 1.7; }
+.info-list { display: grid; gap: 0.8rem; margin-top: 1.25rem; color: #fff; }
+.info-list div {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.12); padding-top: 0.8rem;
+}
+.info-list strong { color: #f4a11f; }
+
+/* Section 3 */
+#section-three {
+  position: relative; min-height: 100vh; display: flex; align-items: flex-end;
+  justify-content: center; padding: 0 2.5rem 8rem;
+}
+#section-three .inner {
+  position: relative; z-index: 10; display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  opacity: 0; transform: translateY(32px); filter: blur(8px);
+  transition: opacity 1s ease-out, transform 1s ease-out, filter 1s ease-out;
+}
+#section-three .inner.visible { opacity: 1; transform: translateY(0); filter: blur(0); }
+#section-three .inner p { color: #d1d5db; font-size: 1rem; margin-bottom: 0.75rem; }
+#section-three .inner h2 {
+  font-family: 'Instrument Serif', serif; font-style: italic; font-size: clamp(2.6rem, 7vw, 5.6rem);
+  font-weight: 400; line-height: 0.9; letter-spacing: -0.04em;
+}
+#section-three .inner .final-cta {
+  display: inline-flex; margin-top: 1.5rem; color: #111; background: #f4a11f;
+  text-decoration: none; font-weight: 700; border-radius: 999px; padding: 0.95rem 1.4rem;
+}
+
+/* Content wrapper */
+#content { position: relative; z-index: 2; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  nav .nav-cta { display: none; }
+  nav .nav-toggle { display: flex; }
+  nav .nav-links {
+    position: fixed; top: 5rem; left: 1.25rem; right: 1.25rem;
+    flex-direction: column; align-items: stretch; gap: 0.2rem;
+    margin: 0; padding: 0.6rem; border-radius: 1.25rem;
+    opacity: 0; transform: translateY(-12px); pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  nav .nav-links.open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  nav .nav-links a { padding: 0.85rem 1rem; text-align: center; }
+  nav .nav-links .nav-pill-btn { justify-content: center; margin-left: 0; margin-top: 0.3rem; }
+  .story-scene.from-left,
+  .story-scene.from-right,
+  .story-scene.from-bottom {
+    justify-content: center; align-items: flex-end; padding: 0 1rem 9vh;
+    transform: translateY(14vh);
+  }
+  .story-scene.active { transform: translateY(0); }
+  .story-card { width: 100%; padding: 1.15rem; }
+  .story-card h3 { font-size: 2.65rem; }
+  .story-scroll-space { min-height: 840vh; }
+  #hero .content { padding-bottom: 5rem; }
+  #hero h1 { font-size: 3.35rem; }
+  #hero .ctas { flex-direction: column; }
+  .info-sections { gap: 22vh; padding: 14vh 1rem 10vh; }
+  .info-panel { padding: 1.25rem; width: 100%; }
+  .info-panel .panel-tags { max-width: 62%; }
+  .info-panel .panel-tags span { font-size: 0.68rem; padding: 0.3rem 0.55rem; }
+  .info-panel .panel-copy { margin-top: 3rem; }
+  .info-panel.from-left,
+  .info-panel.from-right { justify-self: center; transform: translateY(60px); }
+  .info-panel.visible { transform: translateY(0); }
+  #section-three { padding-bottom: 5rem; }
+}
+/* ===== Chapters (title-first scroll story) ===== */
+.chapter { position: relative; z-index: 8; }
+.reveal {
+  opacity: 0; transform: translateY(46px); filter: blur(9px);
+  transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22,1,0.36,1), filter 0.9s ease;
+}
+.reveal.visible { opacity: 1; transform: none; filter: blur(0); }
+
+.chapter-head { min-height: 86vh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center; padding: 0 1.5rem; }
+.eyebrow { color: #f4a11f; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; margin-bottom: 1rem; }
+.chapter-head h2, .info-chapter h2 {
+  font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400;
+  font-size: clamp(3.4rem, 10vw, 8rem); line-height: 0.86; letter-spacing: -0.045em;
+}
+.chapter-sub { color: rgba(255,255,255,0.8); font-size: 1.05rem; margin-top: 1.4rem; max-width: 34rem; }
+
+/* ===== Menu : etiquettes flechees (gauche / droite), centre libre ===== */
+#menu-scroll { position: relative; z-index: 1; min-height: 1505vh; }
+.menu-stage { position: fixed; inset: 0; z-index: 11; pointer-events: none; }
+.menu-cat { position: absolute; inset: 0; opacity: 0; transition: opacity 480ms ease; }
+.menu-cat.active { opacity: 1; }
+.menu-cat .cat-title { position: absolute; top: 11vh; left: 50%; transform: translateX(-50%); text-align: center; width: max-content; max-width: 46vw; }
+.menu-cat .cat-title .eyebrow { margin-bottom: 0.35rem; }
+.menu-cat .cat-title h3 { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400;
+  font-size: clamp(2rem, 4.5vw, 3.6rem); line-height: 0.9; letter-spacing: -0.03em; }
+
+.callout { position: absolute; display: flex; align-items: center; width: clamp(240px, 30vw, 380px);
+  transition: opacity 620ms ease, transform 780ms cubic-bezier(0.22,1,0.36,1); }
+.callout.left  { left: 2.5vw; transform: translateX(-70px); opacity: 0; }
+.callout.right { right: 2.5vw; flex-direction: row-reverse; text-align: right; transform: translateX(70px); opacity: 0; }
+.menu-cat.active .callout { opacity: 1; transform: translateX(0); }
+.callout-body { border-radius: 1rem; padding: 1rem 1.2rem; flex: 1 1 auto; }
+.callout .c-name { display: block; font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400;
+  font-size: 1.5rem; line-height: 1.02; letter-spacing: -0.01em; color: #fff; }
+.callout .c-price { display: inline-block; color: #f4a11f; font-weight: 700; font-size: 1.1rem; margin-top: 0.35rem; }
+.callout .c-desc { display: block; color: rgba(255,255,255,0.66); font-size: 0.82rem; line-height: 1.4; margin-top: 0.45rem; }
+.callout-line { flex: 0 0 auto; width: 5vw; height: 1px; position: relative;
+  background: linear-gradient(90deg, rgba(244,161,31,0.9), rgba(244,161,31,0)); }
+.callout.right .callout-line { background: linear-gradient(270deg, rgba(244,161,31,0.9), rgba(244,161,31,0)); }
+.callout-line::after { content: ""; position: absolute; top: -2.5px; right: -1px; width: 6px; height: 6px;
+  border-radius: 50%; background: #f4a11f; box-shadow: 0 0 8px rgba(244,161,31,0.85); }
+.callout.right .callout-line::after { right: auto; left: -1px; }
+.menu-cat.sparse .callout { width: clamp(260px, 31vw, 410px); }
+.menu-cat.sparse .callout-body { padding: 1.35rem 1.6rem; }
+.menu-cat.sparse .callout .c-name { font-size: 1.95rem; }
+.menu-cat.sparse .callout .c-price { font-size: 1.3rem; margin-top: 0.5rem; }
+.menu-cat.sparse .callout .c-desc { font-size: 0.92rem; margin-top: 0.55rem; }
+@media (prefers-reduced-motion: reduce) { .menu-cat .callout { opacity: 1 !important; transform: none !important; } }
+
+/* ===== Info chapters ===== */
+.info-chapter { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 12vh 1.5rem; }
+.chapter-inner { text-align: center; display: flex; flex-direction: column; align-items: center; }
+.chapter-card { width: min(520px, 90vw); border-radius: 1.25rem; padding: 1.6rem; margin-top: 1.8rem;
+  text-align: left; transition-delay: 0.12s; }
+.chapter-card-text { color: #e9ded0; font-size: 1rem; line-height: 1.65; margin-bottom: 1.2rem; }
+.info-line { display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.14); padding-top: 0.85rem; margin-top: 0.85rem; }
+.info-line:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+.info-line strong { color: #f4a11f; white-space: nowrap; }
+
+@media (max-width: 768px) {
+  .chapter-head { min-height: 72vh; }
+  /* menu : liste verticale par categorie sur mobile */
+  #menu-scroll { min-height: 1106vh; }
+  .menu-cat { display: flex; flex-direction: column; justify-content: center; gap: 0.5rem; padding: 16vh 1.1rem 8vh; }
+  .menu-cat .cat-title { position: static; transform: none; max-width: none; width: auto; margin-bottom: 0.7rem; }
+  .callout { position: static !important; width: 100% !important; transform: translateY(26px); }
+  .callout.left, .callout.right { left: auto; right: auto; flex-direction: row; text-align: left; transform: translateY(26px); }
+  .menu-cat.active .callout { transform: none; }
+  .callout-line { display: none; }
+  .info-chapter { min-height: 80vh; }
+}
+
+/* ===== Added : conversion + trust + a11y ===== */
+html { scroll-behavior: smooth; }
+.note { color: rgba(255,255,255,0.45); font-size: 0.8rem; margin-top: 0.9rem; }
+
+#hero .cta-btn.ghost { background: rgba(255,255,255,0.06); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18); }
+#hero .cta-btn.ghost:hover { background: rgba(255,255,255,0.14); }
+
+.about-grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1.8rem; }
+.about-stat { border-radius: 1rem; padding: 1rem 1.6rem; text-align: center; min-width: 120px; }
+.about-stat strong { display: block; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 2.2rem; color: #f4a11f; line-height: 1; }
+.about-stat span { color: rgba(255,255,255,0.7); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.12em; }
+
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.7rem; justify-content: center; margin-top: 1.6rem; }
+.btn { display: inline-flex; align-items: center; gap: 0.45rem; text-decoration: none; padding: 0.8rem 1.3rem;
+  border-radius: 9999px; font-weight: 600; font-size: 0.88rem; transition: background 0.2s, transform 0.2s; }
+.btn-primary { background: #f4a11f; color: #111; }
+.btn-primary:hover { background: #ffc04b; transform: translateY(-2px); }
+.btn-ghost { background: rgba(255,255,255,0.06); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16); }
+.btn-ghost:hover { background: rgba(255,255,255,0.14); transform: translateY(-2px); }
+
+.badge-row { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.3rem; }
+.badge-soft { border-radius: 9999px; padding: 0.4rem 0.85rem; font-size: 0.76rem; color: rgba(255,255,255,0.88);
+  background: rgba(255,255,255,0.05); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14); }
+
+.map-frame { width: min(560px, 92vw); height: 250px; margin-top: 1.6rem; border: none; border-radius: 1.1rem;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14); filter: grayscale(0.25) contrast(1.05) brightness(0.95); }
+
+.rating-big { display: flex; align-items: baseline; gap: 0.6rem; justify-content: center; margin-top: 0.4rem; }
+.rating-big strong { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 3.2rem; color: #f4a11f; line-height: 1; }
+.rating-big span { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+.reviews { display: flex; flex-wrap: wrap; gap: 1.1rem; justify-content: center; margin-top: 1.8rem; max-width: 1000px; }
+.review-card { width: min(300px, 90vw); border-radius: 1.1rem; padding: 1.3rem; text-align: left; }
+.review-stars { color: #f4a11f; letter-spacing: 0.12em; margin-bottom: 0.6rem; }
+.review-card p { color: #e9ded0; font-size: 0.95rem; line-height: 1.55; font-style: italic; }
+.review-card .who { display: block; margin-top: 1rem; color: rgba(255,255,255,0.6); font-size: 0.8rem; font-style: normal; }
+
+.action-bar { position: fixed; left: 50%; bottom: 1.1rem; transform: translate(-50%, 160%); z-index: 45;
+  display: flex; gap: 0.3rem; padding: 0.4rem; border-radius: 9999px; opacity: 0; pointer-events: none;
+  transition: transform 0.45s cubic-bezier(0.22,1,0.36,1), opacity 0.45s ease; }
+.action-bar.show { transform: translate(-50%, 0); opacity: 1; pointer-events: auto; }
+.action-bar a { display: inline-flex; align-items: center; gap: 0.4rem; text-decoration: none; color: #fff;
+  font-size: 0.82rem; font-weight: 600; padding: 0.6rem 0.95rem; border-radius: 9999px; transition: background 0.2s, color 0.2s; }
+.action-bar a:hover { background: rgba(255,255,255,0.12); }
+.action-bar a.primary { background: #f4a11f; color: #111; }
+.action-bar a.primary:hover { background: #ffc04b; }
+.action-bar svg { width: 16px; height: 16px; }
+
+.site-footer { position: relative; z-index: 5; background: #060503; border-top: 1px solid rgba(255,255,255,0.08); padding: 4rem 2rem 2rem; }
+.footer-grid { max-width: 1100px; margin: 0 auto; display: grid; gap: 2.5rem; grid-template-columns: 1.5fr 1fr 1fr; }
+.footer-brand .fmark { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 2rem; color: #fff; }
+.footer-brand p { color: rgba(255,255,255,0.6); font-size: 0.92rem; line-height: 1.6; margin-top: 0.8rem; max-width: 34ch; }
+.footer-col h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.16em; color: #f4a11f; margin-bottom: 1rem; }
+.footer-col a, .footer-col p { display: block; color: rgba(255,255,255,0.72); text-decoration: none; font-size: 0.9rem; margin-bottom: 0.6rem; }
+.footer-col a:hover { color: #fff; }
+.footer-social { display: flex; gap: 0.7rem; margin-top: 1rem; }
+.footer-social a { width: 38px; height: 38px; border-radius: 9999px; display: grid; place-items: center; background: rgba(255,255,255,0.06); }
+.footer-social svg { width: 18px; height: 18px; color: #fff; }
+.footer-bottom { max-width: 1100px; margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; flex-wrap: wrap; gap: 0.6rem; justify-content: space-between; align-items: center; color: rgba(255,255,255,0.45); font-size: 0.8rem; }
+.footer-bottom a { color: rgba(255,255,255,0.55); text-decoration: none; margin-left: 1.2rem; }
+.footer-bottom a:hover { color: #fff; }
+
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .action-bar .lbl { display: none; }
+  .action-bar a { padding: 0.6rem 0.75rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  .reveal, .menu-group .menu-card { opacity: 1 !important; transform: none !important; filter: none !important; }
+  #particles-canvas { display: none; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Petit Mignon",
+  "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&h=630&fit=crop&q=80&auto=format",
+  "servesCuisine": ["Burgers", "Francaise", "Tartares"],
+  "priceRange": "20-30 EUR",
+  "telephone": "+33556810683",
+  "url": "https://www.petit-mignon-bordeaux.fr",
+  "acceptsReservations": "True",
+  "menu": "https://wiicmenu-qrcode.com",
+  "address": { "@type": "PostalAddress", "streetAddress": "33 Rue Saint-Remi", "postalCode": "33000", "addressLocality": "Bordeaux", "addressCountry": "FR" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "846" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday","Wednesday","Thursday"], "opens": "18:30", "closes": "22:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday"], "opens": "18:30", "closes": "23:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Sunday"], "opens": "18:30", "closes": "22:00" }
+  ],
+  "sameAs": ["https://www.facebook.com/","https://www.instagram.com/"]
+}
+</script>
+</head>
+<body>
+
+<!-- Scroll Video Background -->
+<div id="scroll-video-container">
+  <canvas id="video-canvas"></canvas>
+  <video id="video-fallback" muted playsinline preload="auto" crossorigin="anonymous"
+    src="assets/oiioii-background.mp4"
+  ></video>
+  <div class="overlay"></div>
+</div>
+
+<!-- Particles -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- Navigation -->
+<nav>
+  <div class="logo-mark liquid-glass">p</div>
+  <div class="nav-links liquid-glass">
+    <a href="#hero">Accueil</a>
+    <a href="#menu">Menu</a>
+    <a href="#horaires">Horaires</a>
+    <a href="#adresse">Adresse</a>
+    <a class="nav-pill-btn" href="#reservation">Commander <span>&#8599;</span></a>
+  </div>
+  <button class="nav-toggle liquid-glass" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-cta" aria-hidden="true"></div>
+</nav>
+
+<!-- ===== MENU : etiquettes flechees (gauche / droite) ===== -->
+<div class="menu-stage" id="menu-stage" aria-hidden="true">
+    <div class="menu-cat sparse">
+      <div class="cat-title">
+        <p class="eyebrow">La carte</p>
+        <h3>Nos Entr&eacute;es</h3>
+      </div>
+      <div class="callout left" style="top:30.0%; transition-delay:0ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Pan&eacute; De Ch&egrave;vre Au Miel</span><span class="c-price">8,00 &euro;</span><span class="c-desc">Sur son lit de salade verte</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout left" style="top:70.0%; transition-delay:90ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Assiette De Charcuterie</span><span class="c-price">8,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:30.0%; transition-delay:180ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Oeuf Mayonnaise</span><span class="c-price">6,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:70.0%; transition-delay:270ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Poulet Pan&eacute; Sauce Curry</span><span class="c-price">8,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+    </div>
+    <div class="menu-cat sparse">
+      <div class="cat-title">
+        <p class="eyebrow">La carte</p>
+        <h3>Nos Tartares</h3>
+      </div>
+      <div class="callout left" style="top:30.0%; transition-delay:0ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Tartare De Boeuf</span><span class="c-price">16,00 &euro;</span><span class="c-desc">Boeuf charolais, cornichon, &eacute;chalote, persil, jaune d'oeuf, sauce tradi</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout left" style="top:70.0%; transition-delay:90ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Tartare De Saumon</span><span class="c-price">17,00 &euro;</span><span class="c-desc">Saumon, citron, basilic, &eacute;chalote, cornichon, sauce soja</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:30.0%; transition-delay:180ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Tartare Encornet</span><span class="c-price">17,00 &euro;</span><span class="c-desc">Encornet cuit, oignon rouge, moutarde en grains, cr&egrave;me d'ail, pesto</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:70.0%; transition-delay:270ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Tartare De Betterave</span><span class="c-price">14,90 &euro;</span><span class="c-desc">Parmesan, carotte r&acirc;p&eacute;e, basilic, oignon rouge, citron</span></div>
+        <span class="callout-line"></span>
+      </div>
+    </div>
+    <div class="menu-cat">
+      <div class="cat-title">
+        <p class="eyebrow">La carte</p>
+        <h3>Nos Burgers</h3>
+      </div>
+      <div class="callout left" style="top:22.0%; transition-delay:0ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Gourmand</span><span class="c-price">16,00 &euro;</span><span class="c-desc">Steak charolais, cheddar, confit d'oignon, sauce cocktail, cr&egrave;me de moutarde</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout left" style="top:51.0%; transition-delay:90ms">
+        <div class="callout-body liquid-glass"><span class="c-name">V&eacute;g&eacute;</span><span class="c-price">14,90 &euro;</span><span class="c-desc">Ch&egrave;vre pan&eacute;, confit d'oignon, cheddar, sauce cocktail, nappage secret</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout left" style="top:80.0%; transition-delay:180ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Le Kokorico</span><span class="c-price">14,90 &euro;</span><span class="c-desc">Aiguillettes de volaille, cheddar, oignon grill&eacute;, tomates s&eacute;ch&eacute;es, sauce barbecue</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:22.0%; transition-delay:270ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Le Nordique</span><span class="c-price">18,00 &euro;</span><span class="c-desc">Tartare de saumon, cheddar, sauce cocktail, salade</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:51.0%; transition-delay:360ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Le Tout Cheddar</span><span class="c-price">18,00 &euro;</span><span class="c-desc">Steak charolais, cheddar, confit d'oignon, sauce cocktail, nappage cheddar</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:80.0%; transition-delay:450ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Le Chef</span><span class="c-price">18,00 &euro;</span><span class="c-desc">Steak charolais, cheddar, confit d'oignon, sauce cocktail, nappage secret</span></div>
+        <span class="callout-line"></span>
+      </div>
+    </div>
+    <div class="menu-cat">
+      <div class="cat-title">
+        <p class="eyebrow">La carte</p>
+        <h3>Nos Burgers</h3>
+      </div>
+      <div class="callout left" style="top:22.0%; transition-delay:0ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Le Toujours</span><span class="c-price">22,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout left" style="top:41.3%; transition-delay:90ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Le Terre Et Mer</span><span class="c-price">22,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout left" style="top:60.7%; transition-delay:180ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Le D&eacute;lice</span><span class="c-price">22,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout left" style="top:80.0%; transition-delay:270ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Double Cheddar</span><span class="c-price">22,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:22.0%; transition-delay:360ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Double Chef</span><span class="c-price">22,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:51.0%; transition-delay:450ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Le Sud Ouest</span><span class="c-price">24,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:80.0%; transition-delay:540ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Tour Eiffel</span><span class="c-price">26,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+    </div>
+    <div class="menu-cat sparse">
+      <div class="cat-title">
+        <p class="eyebrow">La carte</p>
+        <h3>Nos Plats</h3>
+      </div>
+      <div class="callout left" style="top:30.0%; transition-delay:0ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Magret De Canard</span><span class="c-price">24,00 &euro;</span><span class="c-desc">Magret entier, sauce maison au choix, frites et salade verte</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout left" style="top:70.0%; transition-delay:90ms">
+        <div class="callout-body liquid-glass"><span class="c-name">1/2 Magret De Canard</span><span class="c-price">17,00 &euro;</span><span class="c-desc">1/2 magret, frites, salade verte, sauce maison au choix</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:30.0%; transition-delay:180ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Petit Mignon</span><span class="c-price">14,90 &euro;</span><span class="c-desc">Boule de boeuf po&ecirc;l&eacute;e, sauce maison, condiments, frites et salade</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:70.0%; transition-delay:270ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Aiguillettes De Volaille</span><span class="c-price">14,90 &euro;</span><span class="c-desc">Sa sauce maison au choix</span></div>
+        <span class="callout-line"></span>
+      </div>
+    </div>
+    <div class="menu-cat sparse">
+      <div class="cat-title">
+        <p class="eyebrow">La carte</p>
+        <h3>Salades Repas</h3>
+      </div>
+      <div class="callout left" style="top:30.0%; transition-delay:0ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Salade De La Mer</span><span class="c-price">16,00 &euro;</span><span class="c-desc">Tartare de saumon, &eacute;chalote, tomates s&eacute;ch&eacute;es, betterave, oignon grill&eacute;, citron</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout left" style="top:70.0%; transition-delay:90ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Salade D'Encornets</span><span class="c-price">16,00 &euro;</span><span class="c-desc">Tartare d'encornet, &eacute;chalote, betterave, tomates s&eacute;ch&eacute;es, oignon grill&eacute;, citron</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:30.0%; transition-delay:180ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Bonifacienne</span><span class="c-price">14,90 &euro;</span><span class="c-desc">Pan&eacute; de ch&egrave;vre, charcuterie, tomates s&eacute;ch&eacute;es</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:70.0%; transition-delay:270ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Campagnarde</span><span class="c-price">14,90 &euro;</span><span class="c-desc">Poulet pan&eacute;, parmesan, tomates s&eacute;ch&eacute;es, oignon, cornichon</span></div>
+        <span class="callout-line"></span>
+      </div>
+    </div>
+    <div class="menu-cat sparse">
+      <div class="cat-title">
+        <p class="eyebrow">La carte</p>
+        <h3>Nos Desserts</h3>
+      </div>
+      <div class="callout left" style="top:30.0%; transition-delay:0ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Fondant Au Chocolat</span><span class="c-price">6,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout left" style="top:70.0%; transition-delay:90ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Tarte Au Citron Meringu&eacute;e</span><span class="c-price">6,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:30.0%; transition-delay:180ms">
+        <div class="callout-body liquid-glass"><span class="c-name">Cheese-cake Sp&eacute;culoos &amp; Fruits Rouges</span><span class="c-price">6,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+      <div class="callout right" style="top:70.0%; transition-delay:270ms">
+        <div class="callout-body liquid-glass"><span class="c-name">G&acirc;teau Pommes, Noix, Cannelle</span><span class="c-price">6,00 &euro;</span></div>
+        <span class="callout-line"></span>
+      </div>
+    </div>
+</div>
+
+<!-- Main Content -->
+<div id="content">
+  <!-- Section 1: Hero -->
+  <section id="hero">
+    <div class="gradient-overlay"></div>
+    <div class="content">
+      <p class="subtitle">Burgers, tartares &amp; magret &middot; produits frais depuis plus de 10 ans</p>
+      <h1>
+        Des burgers g&eacute;n&eacute;reux,
+        <span class="underlined"><span class="line"></span><span>pr&eacute;par&eacute;s minute</span></span>
+        au c&oelig;ur de Bordeaux.
+      </h1>
+      <div class="ctas">
+        <div class="code-box">
+          <span class="prompt">&gt;</span>
+          <code>Ouvert ce soir &middot; service d&egrave;s 18h30</code>
+        </div>
+        <a href="https://wiicmenu-qrcode.com" target="_blank" rel="noopener" class="cta-btn">Commander <span>&rarr;</span></a>
+        <a href="https://www.thefork.fr" target="_blank" rel="noopener" class="cta-btn ghost">R&eacute;server</a>
+      </div>
+    </div>
+    <div class="bounce-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+    </div>
+  </section>
+
+  <!-- ===== A PROPOS ===== -->
+  <section class="chapter info-chapter" id="apropos">
+    <div class="chapter-inner reveal">
+      <p class="eyebrow">La maison</p>
+      <h2>Petit Mignon</h2>
+      <p class="chapter-sub">Depuis plus de 10 ans, Petit Mignon est sp&eacute;cialis&eacute; dans les produits frais. Tartares, magret et burgers vont &eacute;gayer vos papilles.</p>
+      <div class="about-grid">
+        <div class="about-stat liquid-glass"><strong>+10</strong><span>ans</span></div>
+        <div class="about-stat liquid-glass"><strong>4,8&#9733;</strong><span>846 avis</span></div>
+        <div class="about-stat liquid-glass"><strong>100%</strong><span>frais</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU : titre puis cartes qui glissent ===== -->
+  <section class="chapter" id="menu">
+    <div class="chapter-head reveal">
+      <p class="eyebrow">La carte</p>
+      <h2>Menu</h2>
+      <p class="chapter-sub">Produits frais, pr&eacute;par&eacute;s minute &middot; tartares, magret &amp; burgers signature.</p>
+    </div>
+  </section>
+
+  <!-- Piste de defilement qui anime les cartes du menu ci-dessus -->
+  <div class="menu-scroll" id="menu-scroll" aria-hidden="true"></div>
+
+  <!-- ===== AVIS ===== -->
+  <section class="chapter info-chapter" id="avis">
+    <div class="chapter-inner reveal">
+      <p class="eyebrow">Ils ont go&ucirc;t&eacute;</p>
+      <h2>Avis</h2>
+      <div class="rating-big"><strong>4,8</strong><span>&#9733;&#9733;&#9733;&#9733;&#9733; &middot; 846 avis Google</span></div>
+      <div class="reviews">
+        <article class="review-card liquid-glass">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&laquo; Les meilleurs burgers de Bordeaux, viande parfaitement cuite et produits ultra frais. &raquo;</p>
+          <span class="who">Avis client &middot; Google</span>
+        </article>
+        <article class="review-card liquid-glass">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&laquo; Le tartare de saumon est une tuerie et l'accueil est top. On reviendra&nbsp;! &raquo;</p>
+          <span class="who">Avis client &middot; Google</span>
+        </article>
+        <article class="review-card liquid-glass">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>&laquo; Adresse incontournable du centre. Magret excellent, ambiance chaleureuse. &raquo;</p>
+          <span class="who">Avis client &middot; Google</span>
+        </article>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-ghost" href="https://www.google.com/maps" target="_blank" rel="noopener">Lire les avis Google &#8599;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HORAIRES ===== -->
+  <section class="chapter info-chapter" id="horaires">
+    <div class="chapter-inner reveal">
+      <p class="eyebrow">Horaires</p>
+      <h2>Service du soir</h2>
+      <div class="chapter-card liquid-glass">
+        <div class="info-line"><span>Lundi</span><strong>Ferm&eacute;</strong></div>
+        <div class="info-line"><span>Mardi &ndash; Jeudi</span><strong>18h30 &ndash; 22h30</strong></div>
+        <div class="info-line"><span>Vendredi &ndash; Samedi</span><strong>18h30 &ndash; 23h30</strong></div>
+        <div class="info-line"><span>Dimanche</span><strong>18h30 &ndash; 22h00</strong></div>
+      </div>
+      <p class="note">Horaires indicatifs &middot; &agrave; confirmer aupr&egrave;s du restaurant.</p>
+      <div class="badge-row">
+        <span class="badge-soft">V&eacute;g&eacute;tarien</span>
+        <span class="badge-soft">Menu enfant</span>
+        <span class="badge-soft">Chiens admis</span>
+        <span class="badge-soft">&Agrave; emporter</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ADRESSE ===== -->
+  <section class="chapter info-chapter" id="adresse">
+    <div class="chapter-inner reveal">
+      <p class="eyebrow">Adresse</p>
+      <h2>33 Rue Saint-R&eacute;mi</h2>
+      <div class="chapter-card liquid-glass">
+        <p class="chapter-card-text">En plein c&oelig;ur de Bordeaux, au sein du Bronz &amp; Zen, &agrave; deux pas des quais.</p>
+        <div class="info-line"><span>Ville</span><strong>33000 Bordeaux</strong></div>
+        <div class="info-line"><span>Note</span><strong>4,8 &#9733; &middot; 846 avis</strong></div>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=33%20Rue%20Saint-R%C3%A9mi%2033000%20Bordeaux" target="_blank" rel="noopener">Itin&eacute;raire &#8599;</a>
+        <a class="btn btn-ghost" href="https://www.google.com/maps?q=33%20Rue%20Saint-R%C3%A9mi%2C%2033000%20Bordeaux" target="_blank" rel="noopener">Voir sur Google Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESERVER ===== -->
+  <section class="chapter info-chapter" id="reserver">
+    <div class="chapter-inner reveal">
+      <p class="eyebrow">R&eacute;server &amp; commander</p>
+      <h2>Une table quand vous voulez</h2>
+      <div class="chapter-card liquid-glass">
+        <p class="chapter-card-text">R&eacute;servez en ligne sur TheFork, commandez &agrave; emporter ou appelez directement le restaurant.</p>
+        <div class="info-line"><span>T&eacute;l&eacute;phone</span><strong><a href="tel:+33556810683" style="color:#f4a11f;text-decoration:none;">+33 5 56 81 06 83</a></strong></div>
+        <div class="info-line"><span>Budget</span><strong>20&ndash;30 &euro; / pers.</strong></div>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://www.thefork.fr" target="_blank" rel="noopener">R&eacute;server sur TheFork</a>
+        <a class="btn btn-ghost" href="https://wiicmenu-qrcode.com" target="_blank" rel="noopener">Commander en ligne</a>
+        <a class="btn btn-ghost" href="tel:+33556810683">Appeler</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3 -->
+  <section id="section-three">
+    <div class="inner reveal-panel" id="reservation">
+      <p>Pr&ecirc;t &agrave; croquer&nbsp;?</p>
+      <h2>R&eacute;servez votre table ou commandez en ligne.</h2>
+      <a class="final-cta" href="tel:+33556810683">Appeler le restaurant</a>
+    </div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="fmark">Petit Mignon</div>
+      <p>Restaurant de burgers, tartares et magret &agrave; Bordeaux. Produits frais, pr&eacute;par&eacute;s minute depuis plus de 10 ans.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Visiter</h4>
+      <p>33 Rue Saint-R&eacute;mi</p>
+      <p>33000 Bordeaux</p>
+      <a href="tel:+33556810683">+33 5 56 81 06 83</a>
+      <a href="https://www.google.com/maps/dir/?api=1&amp;destination=33%20Rue%20Saint-R%C3%A9mi%2033000%20Bordeaux" target="_blank" rel="noopener">Itin&eacute;raire &#8599;</a>
+    </div>
+    <div class="footer-col">
+      <h4>Le restaurant</h4>
+      <a href="#menu">Menu</a>
+      <a href="#horaires">Horaires</a>
+      <a href="https://www.thefork.fr" target="_blank" rel="noopener">R&eacute;server</a>
+      <a href="https://wiicmenu-qrcode.com" target="_blank" rel="noopener">Commander</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Petit Mignon &middot; Bordeaux. Tous droits r&eacute;serv&eacute;s.</span>
+    <span><a href="#">Mentions l&eacute;gales</a><a href="#">Politique de confidentialit&eacute;</a></span>
+  </div>
+</footer>
+
+<div class="action-bar liquid-glass" id="action-bar">
+  <a class="primary" href="https://www.thefork.fr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg><span class="lbl">R&eacute;server</span></a>
+  <a href="https://wiicmenu-qrcode.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg><span class="lbl">Commander</span></a>
+  <a href="https://www.google.com/maps/dir/?api=1&amp;destination=33%20Rue%20Saint-R%C3%A9mi%2033000%20Bordeaux" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-5.1 7-11a7 7 0 0 0-14 0c0 5.9 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span class="lbl">Itin&eacute;raire</span></a>
+  <a href="tel:+33556810683"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.6a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg><span class="lbl">Appeler</span></a>
+</div>
+
+<script>
+(function() {
+  // ===================== SCROLL VIDEO =====================
+  const VIDEO_URL = 'assets/oiioii-background.mp4';
+  const VIDEO_START_OFFSET = 1.25;
+  const canvas = document.getElementById('video-canvas');
+  const videoEl = document.getElementById('video-fallback');
+  const ctx = canvas.getContext('2d');
+  let frames = [];
+  let framesReady = false;
+  let lastFrameIndex = -1;
+  let videoSeeking = false;
+
+  function resizeCanvas() {
+    const dpr = Math.min(devicePixelRatio, 2);
+    const rect = canvas.getBoundingClientRect();
+    const w = Math.round(rect.width * dpr);
+    const h = Math.round(rect.height * dpr);
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width = w;
+      canvas.height = h;
+    }
+    lastFrameIndex = -1;
+  }
+
+  async function extractFrames() {
+    try {
+      const response = await fetch(VIDEO_URL, { mode: 'cors' });
+      const blob = await response.blob();
+      const objectUrl = URL.createObjectURL(blob);
+
+      const video = document.createElement('video');
+      video.muted = true;
+      video.playsInline = true;
+      video.crossOrigin = 'anonymous';
+      video.preload = 'auto';
+      video.src = objectUrl;
+
+      await new Promise((resolve, reject) => {
+        video.onloadedmetadata = () => resolve();
+        video.onerror = () => reject();
+        setTimeout(() => reject(), 15000);
+      });
+
+      const scale = Math.min(1, 1280 / video.videoWidth);
+      const scaledWidth = Math.round(video.videoWidth * scale);
+      const scaledHeight = Math.round(video.videoHeight * scale);
+      const playableDuration = Math.max(0.1, video.duration - VIDEO_START_OFFSET);
+      const frameCount = Math.max(30, Math.min(120, Math.round(playableDuration * 24)));
+
+      for (let i = 0; i < frameCount; i++) {
+        const time = VIDEO_START_OFFSET + (i / (frameCount - 1)) * (playableDuration - 0.05);
+        video.currentTime = time;
+        await new Promise((resolve, reject) => {
+          const onSeeked = () => { video.removeEventListener('seeked', onSeeked); resolve(); };
+          video.addEventListener('seeked', onSeeked);
+          setTimeout(() => { video.removeEventListener('seeked', onSeeked); reject(); }, 3000);
+        });
+        const bitmap = await createImageBitmap(video, { resizeWidth: scaledWidth, resizeHeight: scaledHeight });
+        frames.push(bitmap);
+      }
+
+      if (frames.length > 0) {
+        framesReady = true;
+        canvas.style.visibility = 'visible';
+        videoEl.style.display = 'none';
+      }
+      URL.revokeObjectURL(objectUrl);
+    } catch(e) { /* fallback to video seeking */ }
+  }
+
+  function getScrollBounds() {
+    const vh = window.innerHeight;
+    return { start: 0, end: document.documentElement.scrollHeight - vh };
+  }
+
+  function getProgress() {
+    const { start, end } = getScrollBounds();
+    const range = end - start;
+    if (range <= 0) return 0;
+    return Math.max(0, Math.min(1, (window.scrollY - start) / range));
+  }
+
+  function drawFrame(frame) {
+    const cw = canvas.width, ch = canvas.height;
+    const s = Math.max(cw / frame.width, ch / frame.height);
+    const dw = frame.width * s, dh = frame.height * s;
+    ctx.drawImage(frame, (cw - dw) / 2, (ch - dh) / 2, dw, dh);
+  }
+
+  function videoTick() {
+    const progress = getProgress();
+    if (framesReady && frames.length > 0) {
+      const idx = Math.round(progress * (frames.length - 1));
+      if (idx !== lastFrameIndex) {
+        lastFrameIndex = idx;
+        if (frames[idx]) drawFrame(frames[idx]);
+      }
+    } else if (videoEl.duration && isFinite(videoEl.duration) && videoEl.readyState >= 1) {
+      const playableDuration = Math.max(0.1, videoEl.duration - VIDEO_START_OFFSET);
+      const target = VIDEO_START_OFFSET + progress * playableDuration;
+      if (!videoSeeking && Math.abs(videoEl.currentTime - target) > 0.001) {
+        videoSeeking = true;
+        videoEl.currentTime = target;
+      }
+    }
+    requestAnimationFrame(videoTick);
+  }
+
+  videoEl.addEventListener('seeked', () => { videoSeeking = false; });
+  videoEl.addEventListener('stalled', () => { videoSeeking = false; });
+  videoEl.addEventListener('loadeddata', () => { videoEl.currentTime = VIDEO_START_OFFSET; });
+  canvas.style.visibility = 'hidden';
+
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+  requestAnimationFrame(videoTick);
+  extractFrames();
+
+  // ===================== PARTICLES =====================
+  const pCanvas = document.getElementById('particles-canvas');
+  const pCtx = pCanvas.getContext('2d');
+  let particles = [];
+
+  function resizeParticles() {
+    pCanvas.width = window.innerWidth;
+    pCanvas.height = window.innerHeight;
+    createParticles();
+  }
+
+  function createParticles() {
+    particles = [];
+    const count = Math.floor((pCanvas.width * pCanvas.height) / 12000);
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * pCanvas.width,
+        y: Math.random() * pCanvas.height,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        size: Math.random() * 1.5 + 0.5,
+        opacity: Math.random() * 0.6 + 0.2
+      });
+    }
+  }
+
+  function animateParticles() {
+    pCtx.clearRect(0, 0, pCanvas.width, pCanvas.height);
+    for (const p of particles) {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = pCanvas.width;
+      if (p.x > pCanvas.width) p.x = 0;
+      if (p.y < 0) p.y = pCanvas.height;
+      if (p.y > pCanvas.height) p.y = 0;
+      pCtx.beginPath();
+      pCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      pCtx.fillStyle = `rgba(255,255,255,${p.opacity})`;
+      pCtx.fill();
+    }
+    requestAnimationFrame(animateParticles);
+  }
+
+  resizeParticles();
+  window.addEventListener('resize', resizeParticles);
+  animateParticles();
+
+  // ===================== HERO FADE =====================
+  const hero = document.getElementById('hero');
+
+  function updateHeroOpacity() {
+    const fade = Math.max(0, 1 - window.scrollY / (window.innerHeight * 0.3));
+    hero.style.opacity = fade;
+  }
+  window.addEventListener('scroll', updateHeroOpacity, { passive: true });
+  updateHeroOpacity();
+
+  // ===================== MOBILE NAV TOGGLE =====================
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.querySelector('nav .nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    navLinks.querySelectorAll('a').forEach((a) => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // ===================== MENU : cartes deux par deux =====================
+  const menuScroll = document.getElementById('menu-scroll');
+  const menuGroups = Array.from(document.querySelectorAll('.menu-cat'));
+  let menuActive = -2;
+
+  function tickMenu() {
+    if (menuScroll && menuGroups.length) {
+      const rect = menuScroll.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const total = rect.height - vh;
+      let target = -1;
+      // only run the show while the spacer fills the viewport
+      if (rect.top <= 0 && rect.bottom >= vh && total > 0) {
+        let p = (-rect.top) / total;
+        p = Math.max(0, Math.min(0.99999, p));
+        target = Math.floor(p * menuGroups.length);
+        target = Math.max(0, Math.min(menuGroups.length - 1, target));
+      }
+      if (target !== menuActive) {
+        menuActive = target;
+        menuGroups.forEach((g, i) => g.classList.toggle('active', i === target));
+      }
+    }
+    requestAnimationFrame(tickMenu);
+  }
+  requestAnimationFrame(tickMenu);
+
+  // ===================== SMOOTH REVEALS =====================
+  const revealObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    }
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-panel').forEach((el) => {
+    revealObserver.observe(el);
+  });
+
+  // ===================== STICKY ACTION BAR =====================
+  const actionBar = document.getElementById('action-bar');
+  const footerEl = document.querySelector('.site-footer');
+  function tickActionBar() {
+    if (actionBar) {
+      const past = window.scrollY > window.innerHeight * 0.85;
+      let nearFooter = false;
+      if (footerEl) nearFooter = footerEl.getBoundingClientRect().top < window.innerHeight - 40;
+      actionBar.classList.toggle('show', past && !nearFooter);
+    }
+    requestAnimationFrame(tickActionBar);
+  }
+  requestAnimationFrame(tickActionBar);
+})();
+</script>
+</body>
+</html>
+
