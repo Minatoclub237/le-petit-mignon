@@ -1024,11 +1024,14 @@ html { scroll-behavior: smooth; }
     videoEl.muted = true;
     videoEl.setAttribute('muted', '');
     videoEl.setAttribute('playsinline', '');
+    videoEl.preload = 'auto';
     const tryPlay = () => { const pr = videoEl.play(); if (pr && pr.catch) pr.catch(function(){}); };
-    videoEl.addEventListener('loadeddata', tryPlay);
-    videoEl.addEventListener('canplay', tryPlay);
+    // demarrer seulement quand assez de donnees sont bufferisees -> lecture fluide d'entree
+    videoEl.addEventListener('canplaythrough', tryPlay, { once: true });
+    // replis : reseau lent / canplaythrough non declenche / autoplay bloque
     document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
-    tryPlay();
+    setTimeout(tryPlay, 3500);
+    videoEl.load();
   } else {
     // Desktop : frames scrubbees au scroll, avec repli sur le seek video.
     videoEl.addEventListener('seeked', () => { videoSeeking = false; });
@@ -1084,9 +1087,14 @@ html { scroll-behavior: smooth; }
     requestAnimationFrame(animateParticles);
   }
 
-  resizeParticles();
-  window.addEventListener('resize', resizeParticles);
-  animateParticles();
+  if (isMobileBg) {
+    // sur mobile : pas de particules -> on libere le CPU/GPU pour une video fluide
+    pCanvas.style.display = 'none';
+  } else {
+    resizeParticles();
+    window.addEventListener('resize', resizeParticles);
+    animateParticles();
+  }
 
   // ===================== HERO FADE =====================
   const hero = document.getElementById('hero');
