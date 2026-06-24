@@ -1012,15 +1012,35 @@ html { scroll-behavior: smooth; }
     requestAnimationFrame(videoTick);
   }
 
-  videoEl.addEventListener('seeked', () => { videoSeeking = false; });
-  videoEl.addEventListener('stalled', () => { videoSeeking = false; });
-  videoEl.addEventListener('loadeddata', () => { videoEl.currentTime = VIDEO_START_OFFSET; });
-  canvas.style.visibility = 'hidden';
+  const isMobileBg = window.matchMedia('(max-width: 768px)').matches
+    || /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-  requestAnimationFrame(videoTick);
-  extractFrames();
+  if (isMobileBg) {
+    // Mobile : le scrubbing image-par-image est peu fiable -> on joue la video
+    // en fond, en boucle (muette, playsinline) pour que le burger soit toujours visible.
+    canvas.style.display = 'none';
+    videoEl.style.display = 'block';
+    videoEl.loop = true;
+    videoEl.muted = true;
+    videoEl.setAttribute('muted', '');
+    videoEl.setAttribute('playsinline', '');
+    const tryPlay = () => { const pr = videoEl.play(); if (pr && pr.catch) pr.catch(function(){}); };
+    videoEl.addEventListener('loadeddata', tryPlay);
+    videoEl.addEventListener('canplay', tryPlay);
+    document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+    tryPlay();
+  } else {
+    // Desktop : frames scrubbees au scroll, avec repli sur le seek video.
+    videoEl.addEventListener('seeked', () => { videoSeeking = false; });
+    videoEl.addEventListener('stalled', () => { videoSeeking = false; });
+    videoEl.addEventListener('loadeddata', () => { videoEl.currentTime = VIDEO_START_OFFSET; });
+    canvas.style.visibility = 'hidden';
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    requestAnimationFrame(videoTick);
+    extractFrames();
+  }
 
   // ===================== PARTICLES =====================
   const pCanvas = document.getElementById('particles-canvas');
