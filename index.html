@@ -1057,6 +1057,12 @@ html { scroll-behavior: smooth; }
   // repli : active le decodage au 1er contact si l'autoplay muet est bloque
   document.addEventListener('touchstart', primeVideo, { once: true, passive: true });
 
+  // Mobile : version allegee (~2,5 Mo, 540p) pour un scrub fluide. Desktop : fichier original.
+  if (isMobileBg) {
+    videoEl.src = 'assets/oiioii-background-mobile.mp4';
+    videoEl.load();
+  }
+
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
   requestAnimationFrame(videoTick);
