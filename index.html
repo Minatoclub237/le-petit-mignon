@@ -1057,10 +1057,13 @@ html { scroll-behavior: smooth; }
   // repli : active le decodage au 1er contact si l'autoplay muet est bloque
   document.addEventListener('touchstart', primeVideo, { once: true, passive: true });
 
-  // Mobile : version allegee (~2,5 Mo, 540p) pour un scrub fluide. Desktop : fichier original.
+  // Mobile : version 720p allegee, chargee ENTIEREMENT en memoire (blob) pour que le
+  // scrub au scroll soit instantane et fluide des l'ouverture (plus de latence reseau au seek).
   if (isMobileBg) {
-    videoEl.src = 'assets/oiioii-background-mobile.mp4';
-    videoEl.load();
+    fetch('assets/oiioii-background-mobile.mp4')
+      .then(function (r) { return r.blob(); })
+      .then(function (b) { videoEl.src = URL.createObjectURL(b); videoEl.load(); })
+      .catch(function () { videoEl.src = 'assets/oiioii-background-mobile.mp4'; videoEl.load(); });
   }
 
   resizeCanvas();
