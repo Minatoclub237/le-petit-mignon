@@ -87,7 +87,8 @@ body { font-family: 'Barlow', sans-serif; background: #010101; color: #fff; }
 /* Scroll Video */
 #scroll-video-container {
   position: fixed; inset: 0; z-index: 0;
-  background: #0a0a0a; pointer-events: none;
+  background: #0a0a0a url('assets/poster.jpg') center center / cover no-repeat;
+  pointer-events: none;
 }
 #scroll-video-container canvas,
 #scroll-video-container video {
@@ -1057,9 +1058,12 @@ html { scroll-behavior: smooth; }
   // repli : active le decodage au 1er contact si l'autoplay muet est bloque
   document.addEventListener('touchstart', primeVideo, { once: true, passive: true });
 
-  // Mobile : version 720p allegee, chargee ENTIEREMENT en memoire (blob) pour que le
-  // scrub au scroll soit instantane et fluide des l'ouverture (plus de latence reseau au seek).
+  // Mobile : ne charge PAS le gros fichier desktop (18 Mo). On recupere la version 720p
+  // allegee entierement en memoire (blob) -> scrub instantane. Pendant le telechargement,
+  // le poster (fond du conteneur) reste visible : aucun ecran noir, ni au debut ni a la fin.
   if (isMobileBg) {
+    videoEl.removeAttribute('src');
+    videoEl.load();
     fetch('assets/oiioii-background-mobile.mp4')
       .then(function (r) { return r.blob(); })
       .then(function (b) { videoEl.src = URL.createObjectURL(b); videoEl.load(); })
